@@ -52,5 +52,41 @@ class LinkList<T> {
         return newNode
     }
 
+    fun pop(): T?{
+
+        if (!isEmpty()) size--
+
+        val result = head?.value
+        head = head?.next
+
+        if (isEmpty()){
+            tail = null
+        }
+
+        return result
+    }
+
+    fun removeLast(): T?{
+        val head = head ?: return null
+
+        if (head.next == null) return pop()
+
+        size--
+
+        var prev = head
+        var current = head
+
+        var next = current.next
+        while (next != null){
+            prev = current
+            current = next
+            next = current.next
+        }
+
+        prev.next = null
+        tail = prev
+        return current.value
+    }
+
     override fun toString(): String = if (isEmpty()) "Empty list" else head.toString()
 }

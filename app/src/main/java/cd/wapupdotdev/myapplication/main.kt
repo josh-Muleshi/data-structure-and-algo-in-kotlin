@@ -19,4 +19,11 @@ fun main(){
     }
 
     println(list)
+
+    list.pop()
+    println(list)
+    list.removeLast()
+    println(list)
+
+
 }
