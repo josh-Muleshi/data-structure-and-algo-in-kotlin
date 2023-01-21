@@ -25,5 +25,7 @@ fun main(){
     list.removeLast()
     println(list)
 
+    list.removeAfter(list.nodeAt(4)!!)
+     println(list)
 
 }

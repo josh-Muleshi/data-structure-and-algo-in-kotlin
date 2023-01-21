@@ -88,5 +88,21 @@ class LinkList<T> {
         return current.value
     }
 
+    fun removeAfter(node: Node<T>): T?{
+        val result = node.next?.value
+
+        if (node.next == tail){
+            tail = node
+        }
+
+        if (node.next != null){
+            size--
+        }
+
+        node.next = node.next?.next
+
+        return result
+    }
+
     override fun toString(): String = if (isEmpty()) "Empty list" else head.toString()
 }
