@@ -1,31 +1,35 @@
 package cd.wapupdotdev.myapplication
 
-import cd.wapupdotdev.myapplication.linklist.LinkList
+import cd.wapupdotdev.myapplication.linklist.LinkedList
 
 fun main(){
-    val list = LinkList<Int>()
 
-    println(list.isEmpty())
+    val list: MutableCollection<Int> = LinkedList()
+//    list.add(3)
+//    list.add(2)
+//    list.add(1)
+//
+//    println(list)
+//    list.remove(1)
+//    println(list)
 
-    list.push(2).push(4).push(6)
+//    list.add(3)
+//    list.add(2)
+//    list.add(1)
+//    list.add(4)
+//    list.add(5)
+//
+//    println(list)
+//    list.retainAll(listOf(3, 4, 5))
+//    println(list)
 
-    list.append(5)
-
-    println("$list \n${list.size}")
-
-    var middleNode = list.nodeAt(1)!!
-    for (i in 1..4){
-        middleNode = list.insert(-1 * i, middleNode)
-    }
+    list.add(3)
+    list.add(2)
+    list.add(1)
+    list.add(4)
+    list.add(5)
 
     println(list)
-
-    list.pop()
+    list.removeAll(listOf(3, 4, 5))
     println(list)
-    list.removeLast()
-    println(list)
-
-    list.removeAfter(list.nodeAt(4)!!)
-     println(list)
-
 }
